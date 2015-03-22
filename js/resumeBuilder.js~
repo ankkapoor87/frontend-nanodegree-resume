@@ -10,9 +10,8 @@ var bio = {
     },
     "bioPic":"http://i.imgur.com/M9PJ6zf.jpg",
     "welcomeMsg":"Welcome to my page. Please send me an email for more information",
-    "skills":["Marketing strategy","Financial analysis","Programming","Teaching"],
-    "locationsLived":["Jalandhar","Mysore"],
-    display:function() {
+    "skills":["Marketing","Programming","Finance","Teaching"],
+    display:function(){
 	var formattedMobile=HTMLmobile.replace("%data%",bio.contacts.mobile);
 	$("#topContacts").append(formattedMobile);
 	$("#footerContacts").append(formattedMobile);
@@ -67,33 +66,23 @@ var work = {
 	    "description":"Windows Consumer Marketing"
 	},
 	{
-	    "employer":"GlaxoSmithKline Consumer Healthcare",
-	    "title":"Summer Intern",
-	    "location":"Gurgaon",
-	    "dates":"April 2013 - June 2013",
-	    "description":"Designed a new program to build medical practitioners as a distribution channel in rural markets by analyzing the current implementation of the rural health project and by conducting market research across 21 key markets in 2 states"
-	},
-	{
-	    "employer":"Infosys",
+	    "employer":"Infosys Ltd.",
 	    "title":"System Engineer",
 	    "location":"Pune",
 	    "dates":"June 2010 - June 2012",
-	    "description":"Development of a web based solution to be used by a multinational bank for internal processes <br> Responsible for liaisoning between client's technology teams, and internal technology team for application maintenance and support <br> Underwent extensive training in multiple technologies such as - Java, .NET, SQL"
+	    "description":"Application development and support"
 	}
     ],
     display:function (){
 	for(i in work.jobs)
 	{
 	    $("#workExperience").append(HTMLworkStart);
-	    
 	    var formattedJob=HTMLworkEmployer.replace("%data%",work.jobs[i].employer);
 	    var formattedTitle=HTMLworkTitle.replace("%data%",work.jobs[i].title);
 	    $(".work-entry:last").append(formattedJob+formattedTitle);
-	    
 	    var formattedDates=HTMLworkDates.replace("%data%",work.jobs[i].dates);
 	    var formattedLocation=HTMLworkLocation.replace("%data%",work.jobs[i].location);
 	    var formattedDescription=HTMLworkDescription.replace("%data%",work.jobs[i].description);
-	    
 	    $(".work-entry:last").append(formattedDates);
 	    $(".work-entry:last").append(formattedLocation);
 	    $(".work-entry:last").append(formattedDescription);
@@ -103,6 +92,14 @@ var work = {
 
 var education = {
     "schools": [
+	{
+	    "name":"Institute of Engineering & Technology - DAVV",
+	    "location":"Indore",
+	    "degree":"Bachelor of Engineering",
+	    "major":["Computer Science"],
+	    "dates":"2010",
+	    "url":"http://www.iet.dauniv.ac.in/departments/computer-engineering"
+	},
 	{
 	    "name":"XLRI Jamshedpur",
 	    "location":"Jamshedpur",
@@ -114,18 +111,10 @@ var education = {
 	{
 	    "name":"A.B. Freeman School of Business",
 	    "location":"New Orleans",
-	    "degree":"MBA Exchange Student",
+	    "degree":"MBA - Exchange Student",
 	    "major":["Finance"],
 	    "dates":"August 2013 - December 2013",
 	    "url":"http://www.freeman.tulane.edu/"
-	},
-	{
-	    "name":"Institute of Engineering & Technology, DAVV",
-	    "location":"Indore",
-	    "degree":"Bachelor of Engineering",
-	    "major":["Computer Science"],
-	    "dates":"2010",
-	    "url":"http://www.iet.dauniv.ac.in/departments/computer-engineering"
 	}
     ],
     display:function(){
@@ -152,17 +141,23 @@ var education = {
 var projects = {
     "project": [
 	{
-	    "title":"Equity Analysis - Carbo Ceramics (NYSE/CRR)",
-	    "dates":"August 2013 - December 2013",
-	    "description":"Published an investment research report with a team of 4 as part of 'Burkenroad reports', a highly acclaimed equity analysis course at the Tulane University <br> Responsible for forecasting cash flows and estimating the company value by interviewing top management, visiting company sites, and conducting extensive industry analysis",
+	    "title":"Rural Sales - GSK Consumer Healthcare",
+	    "dates":"April 2013 - May 2013",
+	    "description":"",
 	    "url":""
 	},
 	{
-	    "title":"Freelance webpage development",
-	    "dates":"January 2015",
-	    "description":"Built a website to be used as an invitation for a wedding <br> Technologies used - HTML, CSS, Javascript, AWS, Heroku",
-	    "url":"http://www.poojamayank.com/"
+	    "title":"Financial Analysis - Carbo Ceramics",
+	    "dates":"August 2013 - December 2013",
+	    "description":"",
+	    "url":""
 	},
+	{
+	    "title":"Wedding webpage for a friend's wedding",
+	    "dates":"January 2015",
+	    "description":"Built a webpage using HTML, CSS, Javascript, AWS, Heroku",
+	    "url":"http://www.poojamayank.com/"
+	}
     ],
     display:function(){
 	for(i in projects.project){
@@ -179,6 +174,7 @@ var projects = {
 
 	    var formattedDescription=HTMLprojectDescription.replace("%data%",projects.project[i].description);
 	    $(".project-entry:last").append(formattedDescription);
+
 	}
     }    
 }
